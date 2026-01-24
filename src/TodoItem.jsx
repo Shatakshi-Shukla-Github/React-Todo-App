@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function TodoList({ todo }) {
+export default function TodoList({ todo, removeTodo }) {
   const labelId = `checkbox-list-label-${todo.id}`;
 
   return (
@@ -23,7 +23,7 @@ export default function TodoList({ todo }) {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container sx={{ color: "text.primary" }}>
               <Grid size={8}>
-                <DeleteIcon />
+                <DeleteIcon onClick={removeTodo} />
               </Grid>
             </Grid>
           </Box>
