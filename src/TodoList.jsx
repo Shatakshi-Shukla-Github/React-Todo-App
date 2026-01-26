@@ -26,6 +26,17 @@ export default function TodoList() {
       return prevTodos.filter((t) => t.id !== id);
     });
   };
+  const toggleTodo = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed: !todo.completed };
+        } else {
+          return todo;
+        }
+      }),
+    );
+  };
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
@@ -34,6 +45,7 @@ export default function TodoList() {
           key={todo.id}
           todo={todo}
           removeTodo={() => removeTodo(todo.id)}
+          toggleTodo={() => toggleTodo(todo.id)}
         />
       ))}
     </List>

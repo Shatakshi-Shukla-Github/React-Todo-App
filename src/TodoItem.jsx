@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function TodoList({ todo, removeTodo }) {
+export default function TodoList({ todo, removeTodo, toggleTodo }) {
   const labelId = `checkbox-list-label-${todo.id}`;
 
   return (
@@ -39,6 +39,7 @@ export default function TodoList({ todo, removeTodo }) {
             tabIndex={-1}
             disableRipple
             // inputProps={{ 'aria-labelledby': labelId }}
+            onChange={toggleTodo}
           />
         </ListItemIcon>
         <ListItemText id={labelId} primary={todo.text} />
