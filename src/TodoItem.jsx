@@ -11,7 +11,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
-
 export default function TodoList({ todo, removeTodo, toggleTodo }) {
   const labelId = `checkbox-list-label-${todo.id}`;
 

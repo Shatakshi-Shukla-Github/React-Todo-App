@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
+import TodoForm from "./TodoForm";
 const initialTodos = [
   { id: 1, text: "Walk the dog", completed: false },
   { id: 2, text: "Walk the cat", completed: false },
@@ -38,6 +39,12 @@ export default function TodoList() {
     );
   };
 
+  const addTodo = (text) => {
+    setTodos((prevTodos) => {
+      return [...prevTodos, { text: text, id: 19, completed: false }];
+    });
+  };
+
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       {todos.map((todo) => (
@@ -48,6 +55,7 @@ export default function TodoList() {
           toggleTodo={() => toggleTodo(todo.id)}
         />
       ))}
+      <TodoForm addTodo={addTodo} />
     </List>
   );
 }
