@@ -3,14 +3,13 @@
 // import viteLogo from '/vite.svg'
 import CssBaseline from "@mui/material/CssBaseline";
 import TodoList from "./TodoList";
+import Navbar from "./Navbar";
 import "./App.css";
-
 function App() {
   return (
     <div>
       <CssBaseline />
-
-      <h1>Todos</h1>
+      <Navbar />
       <TodoList />
     </div>
   );

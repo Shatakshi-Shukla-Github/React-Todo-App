@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { AppBar } from "@mui/material";
 import { useState, useEffect } from "react";
 import TodoForm from "./TodoForm";
 const getInitialData = () => {
@@ -52,17 +53,27 @@ export default function TodoList() {
   };
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          removeTodo={() => removeTodo(todo.id)}
-          toggleTodo={() => toggleTodo(todo.id)}
-        />
-      ))}
-      <TodoForm addTodo={addTodo} />
-    </List>
+    <Box
+      sx={{
+        m: 3,
+      }}
+    >
+      <Typography variant="h3" gutterBottom>
+        Todos
+      </Typography>
+
+      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            removeTodo={() => removeTodo(todo.id)}
+            toggleTodo={() => toggleTodo(todo.id)}
+          />
+        ))}
+        <TodoForm addTodo={addTodo} />
+      </List>
+    </Box>
   );
 }
 
